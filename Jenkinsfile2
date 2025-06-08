@@ -36,7 +36,7 @@ pipeline {
                 }
             }
     }
-    stage('Build and Push Docker Image') {   // success..........
+    stage('Build and Push Docker Image') {   // failed        becoz was not able to access docker daemon on hots(windows)..........
         when {expression {2==2}}
       environment {
         DOCKER_IMAGE = "awajid3/springbootapp:${BUILD_NUMBER}"
@@ -52,7 +52,7 @@ pipeline {
         }
       }
     }
-    stage('Update Deployment File') {
+    stage('Update Deployment File') {             have not tried as previous stage failed
         when {expression {2==3}}
         environment {
             GIT_REPO_NAME = "Jenkins-Zero-To-Hero"
